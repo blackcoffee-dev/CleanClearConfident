@@ -1,4 +1,4 @@
-<h1 align="center">Vanila Front Config👋</h1>
+<h1 align="center">Vanilla Front Config👋</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
   <a href="localhost:8080" target="_blank">
@@ -12,7 +12,7 @@
 > BoilerPlate
 
 
-# Vanila-BoilerPlate
+# Vanilla-BoilerPlate
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/c38437f3-5dbb-4bf5-9a11-dac7c1a068b7/deploy-status)](https://app.netlify.com/sites/vanila-boilerplate/deploys)
 

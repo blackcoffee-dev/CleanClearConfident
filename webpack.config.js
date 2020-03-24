@@ -11,12 +11,12 @@ const isProduction = process.env.NODE_ENV === 'production';
 
 const entryPath = path.join(__dirname, './src/app.js');
 const outputPath = path.resolve(__dirname, 'dist');
-const title = 'Vanila BoilerPlate';
+const title = 'Vanilla BoilerPlate';
 const mode = process.env.NODE_ENV || 'development';
 
 const banner = `
 *     Author: Black Coffe
-*     Description: Vanila BoilerPlate
+*     Description: Vanilla BoilerPlate
 *     Source: https://github.com/amorfati0310/vanilla-boilerplate
 *     BuildDate: ${new Date().toLocaleString()}
 *     Hash: [hash]

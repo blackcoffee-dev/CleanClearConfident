@@ -106,9 +106,9 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '@': 'src',
+      '@': path.join(__dirname, 'src'),
     },
-    extensions: ['.js', '.json', '.jsx'],
+    extensions: ['*', '.js', '.json', '.jsx'],
   },
   optimization: {
     minimizer: isProduction

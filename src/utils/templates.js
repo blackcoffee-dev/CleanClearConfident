@@ -1,6 +1,6 @@
 import moment from 'moment';
 
-export const mainCardTemplate = (address, grade) =>
+export default (address, grade) =>
   `<div class="flex justify-center items-center h-100vh">
       <div
         class="max-w-sm rounded overflow-hidden shadow-lg text-center py-8 px-12 bg-white"

@@ -1,6 +1,6 @@
 import MapService from '@/api/modules/map';
 import DustService from '@/api/modules/dust';
-import {mainCardTemplate} from '@/utils/templates';
+import mainCardTemplate from '@/utils/templates';
 import {getPmStatusEmoji} from '@/utils/utils';
 
 function DustApp() {
@@ -11,8 +11,10 @@ function DustApp() {
   };
   this.getDustStatus = async position => {
     const {latitude, longitude} = position.coords;
-    const msrstnList = await MapService.getMyAddress({latitude, longitude});
-    const address = msrstnList.data.results[0].formatted_address.split(' ');
+    const {
+      data: {results},
+    } = await MapService.getMyAddress({latitude, longitude});
+    const address = results[0].formatted_address.split(' ');
     const arpltnInfo = await DustService.getPMOfMyAddress({
       latitude,
       longitude,

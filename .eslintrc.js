@@ -9,6 +9,9 @@ module.exports = {
     commonjs: true,
     jest: true,
   },
+  "plugins": [
+    "eslint-plugin-html",
+  ],
   extends: ['airbnb', 'eslint-config-prettier'],
   globals: {
     Atomics: 'readonly',
@@ -19,4 +22,7 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {},
+  settings: {
+    'import/resolver': 'webpack',
+  },
 };

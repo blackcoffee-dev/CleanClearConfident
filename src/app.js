@@ -2,6 +2,7 @@ import MapService from '@/api/modules/map';
 import DustService from '@/api/modules/dust';
 import {mainCardTemplate} from '@/utils/templates';
 import {getPmStatusEmoji} from '@/utils/utils';
+import transformCoord from '@/utils/transformCoord';
 
 function DustApp() {
   this.init = async () => {
@@ -13,9 +14,10 @@ function DustApp() {
     const {latitude, longitude} = position.coords;
     const msrstnList = await MapService.getMyAddress({latitude, longitude});
     const address = msrstnList.data.results[0].formatted_address.split(' ');
+    const [tmX, tmY] = transformCoord(longitude, latitude);
     const arpltnInfo = await DustService.getPMOfMyAddress({
-      latitude,
-      longitude,
+      latitude: tmY,
+      longitude: tmX,
     });
     this.render(address, arpltnInfo.data.pm10);
   };

@@ -71,6 +71,7 @@
     "express": "^4.17.1",
     "google-maps": "^4.2.3",
     "moment": "^2.24.0",
+    "proj4": "^2.6.0",
     "tailwindcss": "^1.2.0"
   }
 }

@@ -1,4 +1,4 @@
-import moment from 'moment';
+import * as dayjs from 'dayjs';
 
 export const mainCardTemplate = (address, grade) =>
   `<div class="flex justify-center items-center h-100vh">
@@ -7,7 +7,7 @@ export const mainCardTemplate = (address, grade) =>
       >
         <div class="text-base">현재 위치</div>
         <div class="font-bold text-3xl">${address[2]} ${address[3]}</div>
-        <div class="text-base mb-2">${moment().format('YYYY-MM-DD HH:MM')}</div>
+        <div class="text-base mb-2">${dayjs().format('YYYY-MM-DD HH:MM')}</div>
         <div class="h-100 flex justify-center items-center">
           <div class="text-6xl">
             ${grade.emoji}

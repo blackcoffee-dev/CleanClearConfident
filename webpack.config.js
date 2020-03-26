@@ -109,6 +109,7 @@ module.exports = {
       '@': path.join(__dirname, 'src'),
     },
     extensions: ['*', '.js', '.json', '.jsx'],
+    modules: ['node_modules'],
   },
   optimization: {
     minimizer: isProduction

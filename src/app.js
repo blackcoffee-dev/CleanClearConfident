@@ -13,11 +13,13 @@ function DustApp() {
     const {latitude, longitude} = position.coords;
     const msrstnList = await MapService.getMyAddress({latitude, longitude});
     const address = msrstnList.data.results[0].formatted_address.split(' ');
-    const arpltnInfo = await DustService.getPMOfMyAddress({
+    const {
+      data: {pm10},
+    } = await DustService.getPMOfMyAddress({
       latitude,
       longitude,
     });
-    this.render(address, arpltnInfo.data.pm10);
+    this.render(address, pm10);
   };
   this.render = (address, pm10) => {
     document.querySelector('#app').innerHTML = mainCardTemplate(

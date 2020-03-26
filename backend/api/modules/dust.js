@@ -1,7 +1,7 @@
 const ApiService = require('../index');
+require('dotenv').config();
 
-const API_KEY =
-  'ENEHH7afQtN3sN9X5psV0fog0%2BMCKXGRjflug%2BpyKQ82GABJgO6C1l2mLcV7fKZcfb0%2BvciAqyrrsr7ZTiwGxA%3D%3D';
+const API_KEY = process.env.API_KEY;
 const BASE_URL = 'http://openapi.airkorea.or.kr/openapi/services/rest';
 const RETURN_JSON_TYPE = '_returnType=json';
 
@@ -12,8 +12,6 @@ const DustService = {
     );
   },
   getStatusByStationName(stationName) {
-    console.log('encodeUrl');
-    console.log(encodeURI(stationName));
     return ApiService.get(
       `${BASE_URL}/ArpltnInforInqireSvc/getMsrstnAcctoRltmMesureDnsty?stationName=${encodeURI(
         stationName,

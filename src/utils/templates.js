@@ -1,6 +1,6 @@
 import moment from 'moment';
 
-export const mainCardTemplate = (address, grade) =>
+const mainCardTemplate = (address, grade) =>
   `<div class="flex justify-center items-center h-100vh">
       <div
         class="max-w-sm rounded overflow-hidden shadow-lg text-center py-8 px-12 bg-white"
@@ -25,4 +25,27 @@ export const mainCardTemplate = (address, grade) =>
           </button>
         </div>
       </div>
-   </div>`;
+  </div>`;
+
+const forecastCardTemplate = forecast => {
+  const renderedHTML = forecast
+    .map((data, idx) => {
+      return `
+    <div class="item" data-index=${idx}>
+      <span>${data.date}</span>
+      <span>${data.grade.emoji}</span>
+      <span>${data.grade.status}</span>
+      <span>${data.area}</span>
+    </div>
+    `;
+    })
+    .join('');
+  return `
+    <div class="forecast">
+      <div class="font-bold text-xl mb-2">일별 예보</div>
+      ${renderedHTML}
+    </div>
+  `;
+};
+
+export {mainCardTemplate, forecastCardTemplate};

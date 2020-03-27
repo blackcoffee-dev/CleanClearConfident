@@ -20,6 +20,11 @@ const DustService = {
       )}&dataTerm=month&pageNo=1&numOfRows=10&ServiceKey=${API_KEY}&${RETURN_JSON_TYPE}`,
     );
   },
+  getDustForecastByDate(fullDate) {
+    return ApiService.get(
+      `${BASE_URL}/ArpltnInforInqireSvc/getMinuDustFrcstDspth?searchDate=${fullDate}&ServiceKey=${API_KEY}&&InformCode=PM10&${RETURN_JSON_TYPE}`,
+    );
+  },
 };
 
 module.exports = DustService;

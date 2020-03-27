@@ -8,6 +8,7 @@ router.get('/me/pm10', async (req, res) => {
     req.query.lat,
     req.query.lng,
   );
+
   const dustStatus = await DustService.getStatusByStationName(
     nearStations.data.list[0].stationName,
   );

@@ -44,6 +44,8 @@ const forecastCardTemplate = forecast => {
     <div class="forecast">
       <div class="font-bold text-xl mb-2">일별 예보</div>
       ${renderedHTML}
+      <div class="font-bold text-xl mb-2">대기질예측모델</div>
+      <img src=${forecast[0].gif}>
     </div>
   `;
 };

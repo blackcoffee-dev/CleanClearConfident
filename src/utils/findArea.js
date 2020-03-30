@@ -19,7 +19,7 @@ const FORECASTAREA_ARRAY = [
   '',
   '인천광역시',
 ];
-// const FORECASTAREA_ARRAY = ['서울특별시', '제주특별자치시도', '전라남도', '전라북도', '광주광역시',
+// const REAL_FORECASTAREA_ARRAY = ['서울특별시', '제주특별자치시도', '전라남도', '전라북도', '광주광역시',
 //                         '경상남도', '경상북도', '울산광역시', '대구광역시', '부산광역시',
 //                         '충청남도', '충청북도', '세종', '대전', '강원도영동',
 //                         '강원도영서', '경기남부', '경기북부', '인천']
@@ -50,13 +50,13 @@ const findForecastAreaIndex = (province, city) => {
   let index = FORECASTAREA_ARRAY.indexOf(province).toString();
   switch (index) {
     case '10':
-      if (refCity === '연기군') index = 13;
+      if (refCity === '연기군') index = 12;
       return index;
     case '14':
       if (YEONGSEO_ARRAY.indexOf(refCity) !== -1) index = 15;
       return index;
-    case '15':
-      if (NORTHGYEONGGI_ARRAY.indexOf(refCity) !== -1) index = 16;
+    case '16':
+      if (NORTHGYEONGGI_ARRAY.indexOf(refCity) !== -1) index = 17;
       return index;
     default:
       return index;

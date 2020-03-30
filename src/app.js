@@ -1,18 +1,33 @@
-// math.js
-import './style/app.scss';
-import facebook from './assets/facebook.png';
+import MapService from '@/api/modules/map';
+import DustService from '@/api/modules/dust';
+import {mainCardTemplate} from '@/utils/templates';
+import {getPmStatusEmoji} from '@/utils/utils';
 
-function sum(a, b) {
-  return a + b;
+function DustApp() {
+  this.init = async () => {
+    navigator.geolocation.getCurrentPosition(position =>
+      this.getDustStatus(position),
+    );
+  };
+  this.getDustStatus = async position => {
+    const {latitude, longitude} = position.coords;
+    const msrstnList = await MapService.getMyAddress({latitude, longitude});
+    const address = msrstnList.data.results[0].formatted_address.split(' ');
+    const {
+      data: {pm10},
+    } = await DustService.getPMOfMyAddress({
+      latitude,
+      longitude,
+    });
+    this.render(address, pm10);
+  };
+  this.render = (address, pm10) => {
+    document.querySelector('#app').innerHTML = mainCardTemplate(
+      address,
+      getPmStatusEmoji(pm10),
+    );
+  };
 }
 
-function substract(a, b) {
-  return a - b;
-}
-
-const fbImageEL = document.createElement('img');
-fbImageEL.setAttribute('src', facebook);
-document.body.appendChild(fbImageEL);
-
-console.log(sum, substract);
-console.log(process.env.NODE_ENV);
+const dustApp = new DustApp();
+dustApp.init();

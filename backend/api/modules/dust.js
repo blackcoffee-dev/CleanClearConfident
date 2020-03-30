@@ -13,6 +13,11 @@ const DustService = {
       )}&dataTerm=month&pageNo=1&numOfRows=10`,
     );
   },
+  getUlfptcaAlarmInfo(itemCode = 'PM10') {
+    return OpenApiService.get(
+      `/UlfptcaAlarmInqireSvc/getUlfptcaAlarmInfo?year=${new Date().getFullYear()}&numOfRows=11&pageSize=11&itemCode=${itemCode}`,
+    );
+  },
 };
 
 module.exports = DustService;

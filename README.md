@@ -1,4 +1,4 @@
-<h1 align="center">Vanilla Front Config👋</h1>
+<h1 align="center">CleanClearConfident ☁️</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
   <a href="localhost:8080" target="_blank">
@@ -9,55 +9,36 @@
   </a>
 </p>
 
-> BoilerPlate
 
+# CleanClearConfident ☁️
 
-# Vanilla-BoilerPlate
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a34236c1-043f-4e7a-98a8-e68f03b203e3/deploy-status)](https://app.netlify.com/sites/black-coffee-mise/deploys)
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/c38437f3-5dbb-4bf5-9a11-dac7c1a068b7/deploy-status)](https://app.netlify.com/sites/vanila-boilerplate/deploys)
+## getting-started
 
-## ✨ pre install nvm & vscode Extension  
+### ✨ pre install nvm & vscode Extension  
 
-### [nvm](https://github.com/nvm-sh/nvm)
-```sh
-nvm install v12.16.1
-node version manager
-// lts version (2020.3월 기준 )
-```
-## 👐 vsCode Extension (Eslint Prettier) 
+1. [nvm](https://github.com/nvm-sh/nvm)
 
+2.  👐 vsCode Extension (Eslint Prettier) 
 - [eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 - [prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 
-editor auto save를 활용하기 위해서 설치 <br> 
-그 밖의 유용한 plugin 공유 부탁드려요 :) 
-
-
-## 📦 Dependency
-
-- [eslint](https://eslint.org/docs/user-guide/getting-started)
-- prettier
-- lint-staged
-- husky
-- babel 
-- sass
-- webpack
-
-
-## 🔧 Install 
+### Front-end
 ```sh
-yarn add 
-// or
 npm install 
-
-```
-## 🌱 scripts
-```js
+// scripts
   "lint": eslint lint 
  "format": prettier format
  "start": start localserver
  "build": webpack production build  
 ```
+### Back-end
+```sh
+npm install
+node app.js
+```
+
 
 ## 📝 Reference
 
@@ -67,11 +48,11 @@ npm install
 
 ## ❤️ Get Support 
 
-Front-End 개발 환경 설정할 떄 tip / 개선사항 많은 피드 부탁드립니다 
+CleanClearConfident ☁️ 개발 및 UX 적 피드백 많이 주시면 감사하겠습니다 :) 
 
 ## 🔥 Author
 
 
 ## 💌 Contact
 
-* Email: lyhy0310@gmail.com
+* Email: blackcoffee-dev@gmail.com

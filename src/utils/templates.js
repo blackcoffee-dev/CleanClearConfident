@@ -28,3 +28,9 @@ export const mainCardTemplate = (address, grade) => {
   </div>
 </div>`;
 };
+
+export const citiesCardTemplate = mainCitiesPMList => `<ul>
+${mainCitiesPMList
+  .map(({districtName, issueVal}) => `<li>${districtName}: ${issueVal}</li>`)
+  .join('')}
+</ul>`;

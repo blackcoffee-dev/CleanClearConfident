@@ -3,7 +3,7 @@ import DustService from '@/api/modules/dust';
 import {mainCardTemplate, forecastCardTemplate} from '@/utils/templates';
 import {getPmStatusEmoji} from '@/utils/utils';
 import transformCoord from '@/utils/transformCoord';
-import getForecast from './utils/getForecast';
+import getForecast from '@/utils/getForecast';
 
 function DustApp() {
   this.init = async () => {
@@ -13,18 +13,15 @@ function DustApp() {
   };
   this.getDustStatus = async position => {
     const {latitude, longitude} = position.coords;
-    // const [latitude, longitude]= [36.4810123,127.2883183]
     const msrstnList = await MapService.getMyAddress({latitude, longitude});
     const address = msrstnList.data.results[0].formatted_address.split(' ');
     const [tmX, tmY] = transformCoord(longitude, latitude);
-    const arpltnInfo = await DustService.getPMOfMyAddress({
-      latitude: tmY,
-      longitude: tmX,
-    });
-
+    const {
+      data: {pm10},
+    } = await DustService.getPMOfMyAddress({tmX, tmY});
     const [, province, city] = address;
     const finalForecast = await getForecast(province, city);
-    this.render(address, arpltnInfo.data.pm10, finalForecast);
+    this.render(address, pm10, finalForecast);
   };
   this.render = (address, pm10, finalForecast) => {
     document.querySelector('#app').innerHTML = mainCardTemplate(

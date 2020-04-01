@@ -1,18 +1,16 @@
 const axios = require('axios');
+require('dotenv').config();
 
-const ApiService = {
+const {API_KEY} = process.env;
+const BASE_URL = 'http://openapi.airkorea.or.kr/openapi/services/rest';
+const RETURN_JSON_TYPE = '_returnType=json';
+
+const OpenApiService = {
   get(uri) {
-    return axios.get(`${uri}`);
-  },
-  post(uri, params) {
-    return axios.post(`${uri}`, params);
-  },
-  update(uri, params) {
-    return axios.put(uri, params);
-  },
-  delete(uri) {
-    return axios.delete(uri);
+    return axios.get(
+      `${BASE_URL}${uri}&ServiceKey=${API_KEY}&${RETURN_JSON_TYPE}`,
+    );
   },
 };
 
-module.exports = ApiService;
+module.exports = OpenApiService;

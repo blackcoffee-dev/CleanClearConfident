@@ -16,7 +16,6 @@ router.get('/me/pm10', async (req, res) => {
     pm10: dustStatus.data.list[0].pm10Grade,
   });
 });
-
 router.get('/forecast', async (req, res) => {
   res.header('Access-Control-Allow-Origin', '*');
   const dustForecast = await DustService.getDustForecastByDate(

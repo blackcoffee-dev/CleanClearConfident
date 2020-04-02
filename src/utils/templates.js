@@ -9,6 +9,7 @@ export const mainCardTemplate = (address, grade) => {
     <div class="text-base">현재 위치</div>
     <div class="font-bold text-3xl">${city} ${detail}</div>
     <div class="text-base mb-2">${dayjs().format('YYYY-MM-DD HH:mm')}</div>
+
     <div class="h-100 flex justify-center items-center">
       <div class="text-6xl">
         ${grade.emoji}

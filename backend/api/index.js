@@ -1,5 +1,5 @@
 const axios = require('axios');
-require('dotenv').config();
+// require('dotenv').config();
 
 const {API_KEY} = process.env;
 const BASE_URL = 'http://openapi.airkorea.or.kr/openapi/services/rest';

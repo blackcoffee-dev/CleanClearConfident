@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "deploy": "npx serverless deploy --aws-profile yonghoonjjo"
   },
   "dependencies": {
     "axios": "^0.19.2",
@@ -12,6 +13,10 @@
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "serverless-http": "2.3.2"
+  },
+  "devDependencies": {
+    "serverless": "1.67.0"
   }
 }

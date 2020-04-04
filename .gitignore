@@ -38,3 +38,6 @@ yarn-error.log*
 # Optional cache
 .eslintcache
 .sass-cache
+
+# serverless framework
+.serverless
